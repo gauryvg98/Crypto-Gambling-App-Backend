@@ -1,0 +1,81 @@
+server:
+  port: 8080
+
+backend:
+  url: http://localhost:${server.port}
+frontend:
+  url: http://localhost:3000
+
+jwt:
+  auth:
+    secret_key: 743677397A8472B4B357638792F423F44262443264629250655368566D597133
+    expires_in_minutes: 60 #minutes
+    expires_refresh_in_hours: 24 #hours
+    app: Spring-Security-App
+spring:
+  #  flyway:
+  #    enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/clyx
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  jackson:
+    mapper:
+      accept_case_insensitive_properties: true
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 32KB # Threshold after which files are written to disk.
+      max-file-size: 300MB
+      max-request-size: 300MB
+
+  mail:
+    transport:
+      protocol: smtp
+    username: admin@cryptoclyx.com
+    from: Clyx
+    host: smtp.hostinger.com
+    port: 587
+    password: RrcgfFSuxZUHojd9!
+    debug: false
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            checkserveridentity: false
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+          starttls:
+            required: true
+            enable: true
+
+email:
+  confirmation:
+    url: ${frontend.url}/email-confirm/{emailConfirmationUid}
+  changePassword:
+    url: ${frontend.url}/forgot-password/{emailConfirmationUid}
+
+crypto:
+  solana:
+    cluster: DEVNET
+    encryption_key: solanaEcnryptionKey123@!
+    top-up:
+      expiration-time-minutes: 30
+
+twilio:
+  accountSid: AC278a6c6d14faa6515e3296d25d4f9e95
+  authToken: #auth_token_here
+  phoneNumber: +18556437133
+
+logging:
+  level:
+    com.cryptoclyx.server: DEBUG
+    org.springframework: INFO
