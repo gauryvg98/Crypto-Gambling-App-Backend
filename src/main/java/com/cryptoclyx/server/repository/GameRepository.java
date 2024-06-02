@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GameRepository extends JpaRepository<Game, Long> {
-    
+    // TODO : IMPLEMENT THIS
+    // ADD SQL QUERY METHODS HERE to fulfil the requirements
 } 

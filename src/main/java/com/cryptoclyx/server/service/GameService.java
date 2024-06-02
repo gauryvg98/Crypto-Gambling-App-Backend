@@ -19,7 +19,7 @@ public class GameService {
       return null;
     }
 
-    public Game CreateGame(Long userId) {
+    public void CreateGame() {
       // TODO : IMPLEMENT THIS
     }
 

@@ -28,26 +28,27 @@ public class GameController {
 
 
      /**
-         * TODO : Implement this
+         * TODO : IMPLEMENT THIS
          * 
          * This API should create a new game. 
          * 
          * and takes in the following params in a post request : 
-         * user_id string
+         * created_by string
          * game_price float
-         * game_kind enum = COINFLIP
-         * 
-         * 
+         * game_currency enum
+         * game_type enum = COINFLIP
+         *
      */ 
     @GetMapping("/create")
     @PreAuthorize("hasAuthority('PLAYER')")
     public ResponseEntity createGame() {
-        // TODO : Implement this
-        return ResponseEntity.ok().body(gameService.CreateGame());
+        // TODO : IMPLEMENT THIS
+        gameService.CreateGame();
+        return ResponseEntity.ok().body(null);
     }
 
     /**
-         * TODO : Implement this
+         * TODO : IMPLEMENT THIS
          * 
          * This API should Return a list of game entities which is to be shown to the user. 
          * The API should be paginated.

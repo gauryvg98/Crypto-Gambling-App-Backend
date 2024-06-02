@@ -8,4 +8,6 @@ import lombok.Setter;
 @Table(name = "Games")
 @Getter @Setter
 public class Game {
+    // TODO : IMPLEMENT THIS
+    // ADD DB fields here
 }
