@@ -1,19 +1,26 @@
 package com.cryptoclyx.server.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.Random;
+
+import com.cryptoclyx.server.entity.Game;
+import com.cryptoclyx.server.repository.GameRepository;
+
+import java.util.List;
 @Service
 public class GameService {
-  /*  @Autowired
-    private GamesRepository gamesRepository;
+  
+    @Autowired
+    private GameRepository gameRepository;
 
-    public Game playGame(Long userId) {
-        Game game = new Game();
-        game.setUserId(userId);
-        game.setOutcome(new Random().nextBoolean() ? "WIN" : "LOSS");
-        gamesRepository.save(game);
-        return game;
-    }*/
+    public List<Game> GetGames() {
+      // TODO : IMPLEMENT THIS
+      return null;
+    }
+
+    public Game CreateGame(Long userId) {
+      // TODO : IMPLEMENT THIS
+    }
 
 }
